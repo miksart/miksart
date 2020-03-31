@@ -4,7 +4,7 @@ from .models import Article
 
 def home(request):
     context = {
-        'title': 'title test',
+        'title': 'main',
         'articles': Article.objects.all()
     }
     return render(request, 'blog/index.html', context)
@@ -12,7 +12,7 @@ def home(request):
 
 def detail(request, slug):
     context = {
-        'title': 'test detail',
-        'article': Article.objects.get(slug=slug)
+        'article': Article.objects.get(slug=slug),
+
     }
-    return render(request, 'blog/post.html', context)
+    return render(request, 'blog/detail.html', context)
