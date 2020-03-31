@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Article
 
 class ArticleClass(admin.ModelAdmin):
-    list_display = (('title'),('slug'),('publish'),('status'),)
+    list_display = (('title'),('slug'),('jpublish'),('status'),)
     prepopulated_fields = {'slug':('title', )}
     list_filter = ('status', 'publish', )
     ordering = ['publish', ]
